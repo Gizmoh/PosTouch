@@ -1,0 +1,27 @@
+#:kivy 1.7.2
+
+<coneccion>:
+	aceptar: aceptar
+	BoxLayout:
+		orientation:"vertical"
+		BoxLayout:
+			size_hint: 1,.3
+			Label:
+				size_hint: 1,None
+				text:"Nombre"
+			TextInput:
+				size_hint: 1,.3
+		BoxLayout:
+			size_hint: 1,.3
+			Label:
+				size_hint: 1,.3
+				text:"Contraseña"
+			TextInput:
+				size_hint: 1,.3
+		BoxLayout:
+			orientation:"horizontal"
+			Button:
+				id: aceptar
+				text:"Aceptar"
+			Button:
+				text:"PlaceHolder"

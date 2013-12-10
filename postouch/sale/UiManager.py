@@ -2,7 +2,6 @@ import kivy
 import controller
 kivy.require('1.7.2') # replace with your current kivy version !
 
-from kivy.app import App
 from kivy.uix.label import Label
 from kivy.uix.widget import Widget
 from kivy.uix.boxlayout import BoxLayout
@@ -12,9 +11,6 @@ from kivy.uix.button import Button
 from kivy.uix.accordion import Accordion,AccordionItem
 from kivy.uix.modalview import ModalView
 from kivy.properties import ObjectProperty
-from kivy.properties import StringProperty
-from kivy.core.window import Window
-from kivy.event import EventDispatcher
 
 
 class row(BoxLayout):#Objeto custom para la lista
