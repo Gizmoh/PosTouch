@@ -8,7 +8,7 @@ from kivy.app import App
 from sale import UiManager
 from sale import controller
 from PayUi import payment
-
+from kivy.uix.screenmanager import ScreenManager, Screen
 
 class BetaUi(App):
 	def build(self):
