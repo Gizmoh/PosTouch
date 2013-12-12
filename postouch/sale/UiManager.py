@@ -62,7 +62,6 @@ class Interfaz(BoxLayout):#Interfaz Principal
 		self.save.bind(on_press = self.press)
 		self.save.bind(on_release = self.release)
 		self.send.background_color = 162,0,170,.5
-		self.send.bind(on_press = self.DisplaySale)#Interfaz de venta unida a este boton
 		self.send.bind(on_release = self.releaseB)
 		self.printAct.background_color = 162,0,170,.5
 		self.printAct.bind(on_press = self.pressB)

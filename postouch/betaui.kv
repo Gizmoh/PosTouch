@@ -245,6 +245,7 @@
 				size_hint: 1,.4
 				id: save
 				text: "Guardar"
+				on_press: root.parent.manager.current="screen1"
 			BoxLayout:
 				orientation: "horizontal"
 				size_hint: 1,.25
@@ -265,10 +266,10 @@
 					rows: 2
 					size_hint_x: None
 					orientation: "horizontal"
-					spacing: "20dp"
 
 <coneccion>:
 	aceptar: aceptar
+	name:"screen1"
 	BoxLayout:
 		orientation:"vertical"
 		spacing:"40dp"
@@ -291,4 +292,4 @@
 				text:"Aceptar"
 				on_press: root.manager.current = 'screen2'
 			Button:
-				text:"PlaceHolder"
+				text:"Olvido su contraseña?"

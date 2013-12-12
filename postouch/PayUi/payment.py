@@ -7,12 +7,11 @@ from kivy.uix.modalview import ModalView
 from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.properties import ObjectProperty
-from kivy.app import App
 
 class Selector(Accordion):
 	pass
 
-class Payment(ModalView):
+class Payment(BoxLayout):
 	def __init__(self,**kwargs):
 		super(Payment, self).__init__(**kwargs)
 		Select = Selector()
