@@ -9,10 +9,11 @@ from kivy.uix.button import Button
 from kivy.properties import ObjectProperty
 
 class Selector(Accordion):
-	pass
+	subtotal = ObjectProperty(None)
 
 class Payment(BoxLayout):
 	def __init__(self,**kwargs):
 		super(Payment, self).__init__(**kwargs)
 		Select = Selector()
 		self.add_widget(Select)
+		Selector.subtotal = self.root.Total()

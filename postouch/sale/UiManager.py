@@ -24,9 +24,6 @@ class row(BoxLayout):#Objeto custom para la lista
 	counter = 1
 	price = ""
 
-class PayUi(ModalView):#Objeto custom para la interfaz de pago
-	subtotal = ObjectProperty(None)
-	efectivo = ObjectProperty(None)
 
 
 class CBoton (Button):#Boton custom para almacenar la informacion
@@ -45,7 +42,6 @@ class Interfaz(BoxLayout):#Interfaz Principal
 		#Definicion de Variables
 		listB = []
 		aux = 1
-		Checkout = PayUi()
 		box = ObjectProperty(None)
 		txt = ObjectProperty(None)
 		grid = ObjectProperty(None)
@@ -55,7 +51,9 @@ class Interfaz(BoxLayout):#Interfaz Principal
 		printAct = ObjectProperty(None)
 		send = ObjectProperty(None)
 		money = ObjectProperty(None)
+		logOut = ObjectProperty(None)
 		self.discount.bind(is_open = self.addDiscount)
+		self.logOut.bind(on_press = self.LogOut)
 		products = controller.get_products()
 		users = controller.get_users()
 		self.save.background_color = 0,147,0,.5
@@ -151,10 +149,19 @@ class Interfaz(BoxLayout):#Interfaz Principal
 	def releaseB(interfaz, self):
 		self.background_color = 162,0,170,.5
 
-	def DisplaySale(interfaz,self):#Despliega la ventana de transacciones
-		Checkout = PayUi()
-		Checkout.subtotal.text = interfaz.total.text
-		Checkout.open()
+	def LogOut(interfaz, self):
+		interfaz.parent.parent.transition.direction = "right"
+		interfaz.parent.manager.current = "screen1"
+
+	def PayUi(interfaz, self):
+		interfaz.parent.parent.parent.Total = interfaz.cost
+		interfaz.parent.parent.transition.direction = "left"
+		interfaz.parent.manager.current = "screen3"
+
+	#def DisplaySale(interfaz,self):#Despliega la ventana de transacciones
+	#	Checkout = PayUi()
+	#	Checkout.subtotal.text = interfaz.total.text
+	#	Checkout.open()
 
 
 def setPrice(interfaz):#Sets prices

@@ -16,7 +16,7 @@ from kivy.uix.screenmanager import SlideTransition
 
 class BetaUi(App):
 	s_man = None
-	derp = None
+	Total = 0
 	def build(self):
 		self.s_man = ScreenManager()
 		self.s_man.transition = SlideTransition()
