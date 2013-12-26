@@ -60,6 +60,7 @@ class Interfaz(BoxLayout):#Interfaz Principal
 		users = saleController.get_users()
 		self.save.background_color = 0,147,0,.5
 		self.save.bind(on_press = self.press)
+		self.save.bind(on_press = self.PayUp)
 		self.save.bind(on_release = self.release)
 		self.send.background_color = 162,0,170,.5
 		self.send.bind(on_release = self.releaseB)
@@ -161,7 +162,9 @@ class Interfaz(BoxLayout):#Interfaz Principal
 		interfaz.parent.manager.current = "screen3"
 
 	def PayUp(interfaz, self):
-		pass
+		interfaz.Base.s_man.current = "screen3"
+		#interfaz.Base.screen2.temp2.Select.subtotal.text = "HUEAUHEAH"
+		print(interfaz.Base.s_man)
 
 	#def DisplaySale(interfaz,self):#Despliega la ventana de transacciones
 	#	Checkout = PayUi()
