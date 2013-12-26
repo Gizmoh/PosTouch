@@ -17,6 +17,6 @@ class Payment(BoxLayout):
 		super(Payment, self).__init__(**kwargs)
 		self.ScreenRoot = parent
 		print(self.ScreenRoot)
-		Select = Selector()
-		self.add_widget(Select)
+		self.Select = Selector()
+		self.add_widget(self.Select)
 		

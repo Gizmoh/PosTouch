@@ -162,9 +162,9 @@ class Interfaz(BoxLayout):#Interfaz Principal
 		interfaz.parent.manager.current = "screen3"
 
 	def PayUp(interfaz, self):
+		interfaz.Base.s_man.transition.direction = "left"
 		interfaz.Base.s_man.current = "screen3"
-		#interfaz.Base.screen2.temp2.Select.subtotal.text = "HUEAUHEAH"
-		print(interfaz.Base.s_man)
+		interfaz.Base.temp2.Select.subtotal.text = interfaz.total.text
 
 	#def DisplaySale(interfaz,self):#Despliega la ventana de transacciones
 	#	Checkout = PayUi()
