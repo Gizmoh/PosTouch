@@ -1,5 +1,5 @@
 import kivy
-import controller
+from sale import saleController
 kivy.require('1.7.2') # replace with your current kivy version !
 
 from kivy.uix.label import Label
@@ -35,13 +35,15 @@ class CBoton (Button):#Boton custom para almacenar la informacion
 class Interfaz(BoxLayout):#Interfaz Principal
 	listA = []
 	cost = 0
+	Base = None
 
-	def __init__(self,**kwargs):
+	def __init__(self, parent=None , **kwargs):
 		#Inicializacion de la interfaz
 		super(Interfaz, self).__init__(**kwargs)
 		#Definicion de Variables
 		listB = []
 		aux = 1
+		self.Base = parent
 		box = ObjectProperty(None)
 		txt = ObjectProperty(None)
 		grid = ObjectProperty(None)
@@ -54,8 +56,8 @@ class Interfaz(BoxLayout):#Interfaz Principal
 		logOut = ObjectProperty(None)
 		self.discount.bind(is_open = self.addDiscount)
 		self.logOut.bind(on_press = self.LogOut)
-		products = controller.get_products()
-		users = controller.get_users()
+		products = saleController.get_products()
+		users = saleController.get_users()
 		self.save.background_color = 0,147,0,.5
 		self.save.bind(on_press = self.press)
 		self.save.bind(on_release = self.release)
@@ -157,6 +159,9 @@ class Interfaz(BoxLayout):#Interfaz Principal
 		interfaz.parent.parent.parent.Total = interfaz.cost
 		interfaz.parent.parent.transition.direction = "left"
 		interfaz.parent.manager.current = "screen3"
+
+	def PayUp(interfaz, self):
+		pass
 
 	#def DisplaySale(interfaz,self):#Despliega la ventana de transacciones
 	#	Checkout = PayUi()

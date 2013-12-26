@@ -12,8 +12,11 @@ class Selector(Accordion):
 	subtotal = ObjectProperty(None)
 
 class Payment(BoxLayout):
-	def __init__(self,**kwargs):
+	ScreenRoot = None
+	def __init__(self,parent = None,**kwargs):
 		super(Payment, self).__init__(**kwargs)
+		self.ScreenRoot = parent
+		print(self.ScreenRoot)
 		Select = Selector()
 		self.add_widget(Select)
-		Selector.subtotal = self.root.Total()
+		
