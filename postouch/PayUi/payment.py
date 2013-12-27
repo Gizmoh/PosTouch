@@ -10,6 +10,9 @@ from kivy.properties import ObjectProperty
 
 class Selector(Accordion):
 	subtotal = ObjectProperty(None)
+	efectivo = ObjectProperty(None)
+	efectivo.bind(on_text_validate = CalcChange)
+
 
 class Payment(BoxLayout):
 	ScreenRoot = None
@@ -20,3 +23,6 @@ class Payment(BoxLayout):
 		self.Select = Selector()
 		self.add_widget(self.Select)
 		
+
+def calcChange(instance,self):
+	print(int(instance.subtotal.text)-int(instance.efectivo.text))
