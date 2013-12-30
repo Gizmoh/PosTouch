@@ -27,15 +27,15 @@ class row(BoxLayout):#Objeto custom para la lista
 
 
 class CBoton (Button):#Boton custom para almacenar la informacion
-	name = ""
-	code = ""
-	price = ""
+	name = "" #Almacena el nombre del producto
+	code = "" #Almacena el codigo del producto
+	price = ""	#Almacena el precio del producto
 
 
 class Interfaz(BoxLayout):#Interfaz Principal
 	listA = []
-	cost = 0
-	Base = None
+	cost = 0 #Contiene el costo total acumulado de los productos sin el descuento
+	Base = None #Contiene el objeto Main
 
 	def __init__(self, parent=None , **kwargs):
 		#Inicializacion de la interfaz
@@ -165,6 +165,7 @@ class Interfaz(BoxLayout):#Interfaz Principal
 		interfaz.Base.s_man.transition.direction = "left"
 		interfaz.Base.s_man.current = "screen3"
 		interfaz.Base.temp2.Select.subtotal.text = interfaz.total.text
+		interfaz.Base.temp2.Total = interfaz.cost
 
 	#def DisplaySale(interfaz,self):#Despliega la ventana de transacciones
 	#	Checkout = PayUi()

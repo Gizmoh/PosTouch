@@ -247,6 +247,7 @@
 				text:"Olvido su contraseña?"
 <Selector>:
 	subtotal: subtotal
+	efectivo: efectivo
 	orientation:"vertical"
 	AccordionItem:
 		title:"Al Contado"
@@ -266,7 +267,7 @@
 					font_size: "30dp"
 					size_hint:1,None
 			BoxLayout:
-				size_hint:.8,None
+				size_hint:.8,.03
 				height:"30dp"
 				orientation:"horizontal"
 				Label:
@@ -274,7 +275,14 @@
 				TextInput:
 					id: efectivo
 					multiline: False
-					text:"TEST"
+					text:""
+			BoxLayout:
+				orientation: "horizontal"
+				size_hint:1,.03
+				Label:
+					text: "Vuelto"
+				Label:
+					text: "TEST"
 			BoxLayout:
 				spacing:"10dp"
 				size_hint:1,.1

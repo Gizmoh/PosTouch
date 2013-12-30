@@ -11,18 +11,18 @@ from kivy.properties import ObjectProperty
 class Selector(Accordion):
 	subtotal = ObjectProperty(None)
 	efectivo = ObjectProperty(None)
-	efectivo.bind(on_text_validate = CalcChange)
 
 
 class Payment(BoxLayout):
 	ScreenRoot = None
+	Total = 0
 	def __init__(self,parent = None,**kwargs):
 		super(Payment, self).__init__(**kwargs)
 		self.ScreenRoot = parent
 		print(self.ScreenRoot)
 		self.Select = Selector()
 		self.add_widget(self.Select)
-		
+		self.Select.efectivo.bind(on_text_validate = self.CalcChange)
 
-def calcChange(instance,self):
-	print(int(instance.subtotal.text)-int(instance.efectivo.text))
+	def CalcChange(instance,self):
+		print(int(instance.Total)-int(instance.Select.efectivo.text))
